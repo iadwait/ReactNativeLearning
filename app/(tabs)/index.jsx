@@ -3,7 +3,8 @@ import React from 'react'
 // import { View, Text, Button } from 'react-native'
 // import First from '../../src/components/First';
 import { View } from 'react-native';
-import JSX from '../../src/components/JSX';
+// import JSX from '../../src/components/JSX';
+import OnPress from '../../src/components/OnPress';
 
 
 const HomeScreen = () => {
@@ -14,7 +15,8 @@ const HomeScreen = () => {
       <Button title='This is a Button'/>
       <First />
       <First /> */}
-      <JSX />
+      {/* <JSX /> */}
+      <OnPress />
     </View>
   )
 }
