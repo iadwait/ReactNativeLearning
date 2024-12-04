@@ -7,7 +7,8 @@ import { View } from 'react-native';
 // import OnPress from '../../src/components/OnPress';
 //import UseStateHook from '../../src/components/UseStateHook';
 // import Props from '../../src/components/Props'
-import InputText from '../../src/components/InputText'
+// import InputText from '../../src/components/InputText'
+import Styling from '../../src/components/Styling'
 
 const HomeScreen = () => {
   return (
@@ -21,7 +22,8 @@ const HomeScreen = () => {
       {/* <OnPress /> */}
       {/* <UseStateHook /> */}
       {/* <Props /> */}
-      <InputText />
+      {/* <InputText /> */}
+      <Styling />
     </View>
   )
 }
