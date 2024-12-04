@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const UseStateHook = () => {
     let arr = [1,2,3]
-    const [num1, num2, num3] = arr // Array Dec
+    const [num1, num2, num3] = arr // Array Destructuring - JS Concept
     const [name, setName] = useState('Adwait');
     const updateName = () => {
         setName("Raghav")

@@ -5,7 +5,8 @@ import React from 'react'
 import { View } from 'react-native';
 // import JSX from '../../src/components/JSX';
 // import OnPress from '../../src/components/OnPress';
-import UseStateHook from '../../src/components/UseStateHook';
+//import UseStateHook from '../../src/components/UseStateHook';
+import Props from '../../src/components/Props'
 
 
 const HomeScreen = () => {
@@ -18,7 +19,8 @@ const HomeScreen = () => {
       <First /> */}
       {/* <JSX /> */}
       {/* <OnPress /> */}
-      <UseStateHook />
+      {/* <UseStateHook /> */}
+      <Props />
     </View>
   )
 }
