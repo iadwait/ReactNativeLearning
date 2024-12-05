@@ -12,11 +12,13 @@ import { View } from 'react-native';
 // import FlatListScreen from '../../src/components/FlatListScreen'
 //import SectionListScreen from '../../src/components/SectionListScreen'
 // import LoginForm from '../../src/components/LoginForm'
-import ContactListScreen from '../../src/Screens/Contact/ContactListScreen'
+// import ContactListScreen from '../../src/Screens/Contact/ContactListScreen'
+import Grid from '../../src/components/Grid'
 
 const HomeScreen = () => {
   return (
-    <View>
+    // This View has flex 1 as for Grid.jsx we need to make it 1
+    <View style={ {flex: 1} }> 
       {/* <Text style={{ fontSize: 30 }}>React Native Text Component</Text>
       <Text style={{ fontSize: 30 }}>React Native Text Component</Text>
       <Button title='This is a Button'/>
@@ -31,7 +33,8 @@ const HomeScreen = () => {
       {/* <FlatListScreen /> */}
       {/* <SectionListScreen /> */}
       {/* <LoginForm /> */}
-      <ContactListScreen />
+      {/* <ContactListScreen /> */}
+      <Grid />
     </View>
   )
 }
