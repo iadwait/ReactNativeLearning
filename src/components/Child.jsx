@@ -12,6 +12,7 @@ const Child = (props) => {
             <Text style={{ fontSize: 30 }}>Child</Text>
             <Text style={{ fontSize: 30 }}>Counter: {counter}</Text>
             <Text style={{ fontSize: 30 }}>Item: {item}</Text>
+            <Text>Arr Data Received: id-{props.arrData[0].id} Name-{props.arrData[0].name}</Text>
         </View>
     )
 }
