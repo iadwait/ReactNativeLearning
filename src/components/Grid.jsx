@@ -1,5 +1,7 @@
-import { View, Text, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+const { width: screenWidth } = Dimensions.get('window');
 
 /*
 List vs Grid
@@ -50,8 +52,32 @@ const Grid = () => {
     )
 }
 
-export default Grid
+const HorizontalScrollExample = () => (
+    <SafeAreaView>
+        <ScrollView
+            horizontal
+            contentContainerStyle={{
+                flexDirection: 'row',
+                justifyContent: 'flex-start', // Align items to the left
+                padding: 10,
+            }}
+            showsHorizontalScrollIndicator={false} // Optional: Hide the scrollbar
+            style={HorizontalScrollExampleStyles.container}
+        >
+            {Array.from({ length: 20 }).map((_, index) => (
+                <View style={HorizontalScrollExampleStyles.item} key={index}>
+                    <Text style={ {position: 'absolute', top: 10, left: 20 } }>Top Left</Text>
+                    <Text style={ {position: 'absolute', top: 10, right: 20 } }>Top right</Text>
+                    <Text>Card {index + 1}</Text>
+                    <Text style={ {position: 'absolute', bottom: 10, left: 20 } }>Bottom Left</Text>
+                    <Text style={ {position: 'absolute', bottom: 10, right: 20 } }>Bottom right</Text>
+                </View>
+            ))}
+        </ScrollView>
+    </SafeAreaView>
+);
 
+// MARK: - Styling
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1, // This will allow the component to capture all the space like maing it full screen, 
@@ -90,3 +116,22 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase'
     }
 })
+
+const HorizontalScrollExampleStyles = StyleSheet.create({
+    container: {
+        backgroundColor: 'lightgray'
+    },
+    item: {
+        backgroundColor: 'darkgray',
+        margin: 10,
+        padding: 10,
+        width: screenWidth - 40,
+        height: 250,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+
+})
+
+// export default Grid
+export default HorizontalScrollExample;
