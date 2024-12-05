@@ -14,7 +14,8 @@ import { View } from 'react-native';
 // import LoginForm from '../../src/components/LoginForm'
 // import ContactListScreen from '../../src/Screens/Contact/ContactListScreen'
 // import Grid from '../../src/components/Grid'
-import HorizontalScrollExample from '../../src/components/Grid';
+// import HorizontalScrollExample from '../../src/components/Grid';
+import ClassComponent, { ClassComponents } from '../../src/components/ClassComponents'
 
 const HomeScreen = () => {
   return (
@@ -36,7 +37,8 @@ const HomeScreen = () => {
       {/* <LoginForm /> */}
       {/* <ContactListScreen /> */}
       {/* <Grid /> */}
-      <HorizontalScrollExample />
+      {/* <HorizontalScrollExample /> */}
+      <ClassComponents />
     </View>
   )
 }
