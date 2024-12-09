@@ -18,7 +18,8 @@ import { View } from 'react-native';
 // import ClassComponent, { ClassComponents } from '../../src/components/ClassComponents'
 // import UseEffectHook from '../../src/components/UseEffectHook'
 // import UseEffectHookUpdatePhase from '../../src/components/UseEffectHookUpdatePhase'
-import UseEffectHookUmmountingPhase from '../../src/components/UseEffectHookUmmountingPhase'
+// import UseEffectHookUmmountingPhase from '../../src/components/UseEffectHookUmmountingPhase'
+import HideShowToggle from '../../src/components/HideShowToggle'
 
 const HomeScreen = () => {
   return (
@@ -44,7 +45,8 @@ const HomeScreen = () => {
       {/* <ClassComponents /> */}
         {/* <UseEffectHook /> */}
         {/* <UseEffectHookUpdatePhase /> */}
-        <UseEffectHookUmmountingPhase />
+        {/* <UseEffectHookUmmountingPhase /> */}
+        <HideShowToggle />
     </View>
   )
 }
