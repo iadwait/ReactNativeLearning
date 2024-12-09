@@ -17,7 +17,8 @@ import { View } from 'react-native';
 // import HorizontalScrollExample from '../../src/components/Grid';
 // import ClassComponent, { ClassComponents } from '../../src/components/ClassComponents'
 // import UseEffectHook from '../../src/components/UseEffectHook'
-import UseEffectHookUpdatePhase from '../../src/components/UseEffectHookUpdatePhase'
+// import UseEffectHookUpdatePhase from '../../src/components/UseEffectHookUpdatePhase'
+import UseEffectHookUmmountingPhase from '../../src/components/UseEffectHookUmmountingPhase'
 
 const HomeScreen = () => {
   return (
@@ -42,7 +43,8 @@ const HomeScreen = () => {
       {/* <HorizontalScrollExample /> */}
       {/* <ClassComponents /> */}
         {/* <UseEffectHook /> */}
-        <UseEffectHookUpdatePhase />
+        {/* <UseEffectHookUpdatePhase /> */}
+        <UseEffectHookUmmountingPhase />
     </View>
   )
 }
