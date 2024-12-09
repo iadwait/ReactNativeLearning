@@ -19,7 +19,8 @@ import { View } from 'react-native';
 // import UseEffectHook from '../../src/components/UseEffectHook'
 // import UseEffectHookUpdatePhase from '../../src/components/UseEffectHookUpdatePhase'
 // import UseEffectHookUmmountingPhase from '../../src/components/UseEffectHookUmmountingPhase'
-import HideShowToggle from '../../src/components/HideShowToggle'
+// import HideShowToggle from '../../src/components/HideShowToggle'
+import StyleWithButton from '../../src/components/StyleWithButton'
 
 const HomeScreen = () => {
   return (
@@ -46,7 +47,8 @@ const HomeScreen = () => {
         {/* <UseEffectHook /> */}
         {/* <UseEffectHookUpdatePhase /> */}
         {/* <UseEffectHookUmmountingPhase /> */}
-        <HideShowToggle />
+        {/* <HideShowToggle /> */}
+        <StyleWithButton />
     </View>
   )
 }
