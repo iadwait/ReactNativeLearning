@@ -27,7 +27,7 @@ import PressableComponent from '../../src/components/PressableComponent'
 const HomeScreen = () => {
   return (
     // This View has flex 1 as for Grid.jsx we need to make it 1
-    <View style={ {flex: 1} }> 
+    <View style={{ flex: 1 }}>
       {/* <Text style={{ fontSize: 30 }}>React Native Text Component</Text>
       <Text style={{ fontSize: 30 }}>React Native Text Component</Text>
       <Button title='This is a Button'/>
@@ -46,13 +46,13 @@ const HomeScreen = () => {
       {/* <Grid /> */}
       {/* <HorizontalScrollExample /> */}
       {/* <ClassComponents /> */}
-        {/* <UseEffectHook /> */}
-        {/* <UseEffectHookUpdatePhase /> */}
-        {/* <UseEffectHookUmmountingPhase /> */}
-        {/* <HideShowToggle /> */}
-        {/* <StyleWithButton /> */}
-        {/* <Loader /> */}
-        <PressableComponent />
+      {/* <UseEffectHook /> */}
+      {/* <UseEffectHookUpdatePhase /> */}
+      {/* <UseEffectHookUmmountingPhase /> */}
+      {/* <HideShowToggle /> */}
+      {/* <StyleWithButton /> */}
+      {/* <Loader /> */}
+      <PressableComponent />
     </View>
   )
 }
