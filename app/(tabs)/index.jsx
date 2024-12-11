@@ -22,7 +22,8 @@ import { View } from 'react-native';
 // import HideShowToggle from '../../src/components/HideShowToggle'
 // import StyleWithButton from '../../src/components/StyleWithButton'
 // import Loader from '../../src/components/Loader'
-import PressableComponent from '../../src/components/PressableComponent'
+// import PressableComponent from '../../src/components/PressableComponent'
+import StatusBarExample from '../../src/components/StatusBarExample'
 
 const HomeScreen = () => {
   return (
@@ -52,7 +53,8 @@ const HomeScreen = () => {
       {/* <HideShowToggle /> */}
       {/* <StyleWithButton /> */}
       {/* <Loader /> */}
-      <PressableComponent />
+      {/* <PressableComponent /> */}
+      <StatusBarExample />
     </View>
   )
 }
