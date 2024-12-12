@@ -18,6 +18,14 @@ const ModalDialogBox = () => {
                     <View style={styles.modalView}>
                         <Text style={styles.modalTitle}>Title</Text>
                         <Text style={styles.modalText}>This is message This is message This is message This is message </Text>
+                        <View style={styles.generalButtonView}>
+                            <TouchableOpacity style={styles.generalButton} onPress={() => setModalVisible(false)}>
+                                <Text style={styles.closeButtonText}>Button 1</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.generalButton} onPress={() => setModalVisible(false)}>
+                                <Text style={styles.closeButtonText}>Button 2</Text>
+                            </TouchableOpacity>
+                        </View>
                         <TouchableOpacity style={styles.closeButton} onPress={() => setModalVisible(false)}>
                             <Text style={styles.closeButtonText}>Close</Text>
                         </TouchableOpacity>
@@ -74,6 +82,17 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#555'
     },
+    generalButtonView: {
+        flexDirection: 'row',
+    },
+    generalButton: {
+        backgroundColor: '#03dace',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 20,
+        elevation: 2,
+        margin: 5
+    },
     closeButton: {
         backgroundColor: '#03dace',
         paddingVertical: 10,
@@ -85,8 +104,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontSize: 16,
         fontWeight: 'bold'
-    },
-
+    }
 })
 
 export default ModalDialogBox
