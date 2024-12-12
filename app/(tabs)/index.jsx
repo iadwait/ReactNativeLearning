@@ -23,7 +23,8 @@ import { View } from 'react-native';
 // import StyleWithButton from '../../src/components/StyleWithButton'
 // import Loader from '../../src/components/Loader'
 // import PressableComponent from '../../src/components/PressableComponent'
-import StatusBarExample from '../../src/components/StatusBarExample'
+// import StatusBarExample from '../../src/components/StatusBarExample'
+import UseRefHook from '../../src/components/UseRefHook'
 
 const HomeScreen = () => {
   return (
@@ -54,7 +55,8 @@ const HomeScreen = () => {
       {/* <StyleWithButton /> */}
       {/* <Loader /> */}
       {/* <PressableComponent /> */}
-      <StatusBarExample />
+      {/* <StatusBarExample /> */}
+      <UseRefHook />
     </View>
   )
 }
