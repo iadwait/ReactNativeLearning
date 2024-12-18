@@ -6,9 +6,9 @@
       "email": "adwait123@gmail.com"
     },
     {
-      "id": "2",
-      "name": "John",
-      "email": "john456@gmail.com"
+      "name": "Jerry",
+      "email": "cartoon@tv.com",
+      "id": "2"
     },
     {
       "id": "3",
@@ -16,24 +16,9 @@
       "email": "rubel998@gmail.com"
     },
     {
-      "id": "4",
-      "name": "Lucifer",
-      "email": "lucifer@gmail.com"
-    },
-    {
-      "id": "5",
-      "name": "New User",
-      "email": "user@test.com"
-    },
-    {
-      "id": "5",
-      "name": "Test",
-      "email": "test@gmail.com"
-    },
-    {
-      "id": "6",
-      "name": "Test2",
-      "email": "Test2@gmail.com"
+      "name": "Anish Giri",
+      "email": "anish@chess.com",
+      "id": "4"
     }
   ]
 }
