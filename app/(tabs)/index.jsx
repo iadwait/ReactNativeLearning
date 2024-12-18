@@ -27,7 +27,8 @@ import { View } from 'react-native';
 // import UseRefHook from '../../src/components/UseRefHook'
 // import ModalDialogBox from '../../src/components/ModalDialogBox'
 // import AlertExample from '../../src/components/AlertExample'
-import GET_API from '../../src/components/GET_API'
+// import GET_API from '../../src/components/GET_API'
+import POST_API from '../../src/components/POST_API'
 
 const HomeScreen = () => {
   return (
@@ -62,7 +63,8 @@ const HomeScreen = () => {
       {/* <UseRefHook /> */}
       {/* <ModalDialogBox /> */}
       {/* <AlertExample /> */}
-      <GET_API />
+      {/* <GET_API /> */}
+      <POST_API />
     </View>
   )
 }

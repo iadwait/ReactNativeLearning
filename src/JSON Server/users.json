@@ -1,24 +1,39 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Adwait",
-            "email": "adwait123@gmail.com"
-        },
-        {
-            "id": 2,
-            "name": "John",
-            "email": "john456@gmail.com"
-        },
-        {
-            "id": 3,
-            "name": "Rubel",
-            "email": "rubel998@gmail.com"
-        },
-        {
-            "id": 4,
-            "name": "Lucifer",
-            "email": "lucifer@gmail.com"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "Adwait",
+      "email": "adwait123@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "John",
+      "email": "john456@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Rubel",
+      "email": "rubel998@gmail.com"
+    },
+    {
+      "id": "4",
+      "name": "Lucifer",
+      "email": "lucifer@gmail.com"
+    },
+    {
+      "id": "5",
+      "name": "New User",
+      "email": "user@test.com"
+    },
+    {
+      "id": "5",
+      "name": "Test",
+      "email": "test@gmail.com"
+    },
+    {
+      "id": "6",
+      "name": "Test2",
+      "email": "Test2@gmail.com"
+    }
+  ]
 }
