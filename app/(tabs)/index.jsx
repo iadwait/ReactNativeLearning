@@ -25,7 +25,8 @@ import { View } from 'react-native';
 // import PressableComponent from '../../src/components/PressableComponent'
 // import StatusBarExample from '../../src/components/StatusBarExample'
 // import UseRefHook from '../../src/components/UseRefHook'
-import ModalDialogBox from '../../src/components/ModalDialogBox'
+// import ModalDialogBox from '../../src/components/ModalDialogBox'
+import AlertExample from '../../src/components/AlertExample'
 
 const HomeScreen = () => {
   return (
@@ -58,7 +59,8 @@ const HomeScreen = () => {
       {/* <PressableComponent /> */}
       {/* <StatusBarExample /> */}
       {/* <UseRefHook /> */}
-      <ModalDialogBox />
+      {/* <ModalDialogBox /> */}
+      <AlertExample />
     </View>
   )
 }
