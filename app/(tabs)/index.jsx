@@ -30,7 +30,8 @@ import { View } from 'react-native';
 // import GET_API from '../../src/components/GET_API'
 // import POST_API from '../../src/components/POST_API'
 // import PUT_API from '../../src/components/PUT_API'
-import PATCH_API from '../../src/components/PATCH_API'
+// import PATCH_API from '../../src/components/PATCH_API'
+import DELETE_API from '../../src/components/DELETE_API'
 
 const HomeScreen = () => {
   return (
@@ -68,7 +69,8 @@ const HomeScreen = () => {
       {/* <GET_API /> */}
       {/* <POST_API /> */}
       {/* <PUT_API /> */}
-      <PATCH_API />
+      {/* <PATCH_API /> */}
+      < DELETE_API />
     </View>
   )
 }
