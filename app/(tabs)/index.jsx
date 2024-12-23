@@ -33,7 +33,8 @@ import { View } from 'react-native';
 // import PATCH_API from '../../src/components/PATCH_API'
 // import DELETE_API from '../../src/components/DELETE_API'
 // import GET_API_LIST from '../../src/components/GET_API_LIST'
-import PlatformExample from '../../src/components/PlatformExample'
+// import PlatformExample from '../../src/components/PlatformExample'
+import Search from '../../src/components/Search'
 
 const HomeScreen = () => {
   return (
@@ -74,7 +75,8 @@ const HomeScreen = () => {
       {/* <PATCH_API /> */}
       {/* < DELETE_API /> */}
       {/* <GET_API_LIST /> */}
-      <PlatformExample />
+      {/* <PlatformExample /> */}
+      <Search />
     </View>
   )
 }
