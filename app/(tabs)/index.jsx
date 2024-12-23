@@ -37,6 +37,7 @@ import { View } from 'react-native';
 // import Search from '../../src/components/Search'
 import Home from '../../src/NavigationScreens/Home'
 import About from '../../src/NavigationScreens/About'
+import Login from '../../src/NavigationScreens/Login'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const HomeScreen = () => {
@@ -89,6 +90,7 @@ const HomeScreen2 = () => {
   return (
     // <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name='Login' component={Login} />
         <Stack.Screen name='Home' component={Home} options={{ headerShown: false }} />
         <Stack.Screen name='About' component={About} />
       </Stack.Navigator>
