@@ -2,7 +2,7 @@
 import React from 'react'
 // import { View, Text, Button } from 'react-native'
 // import First from '../../src/components/First';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 // import JSX from '../../src/components/JSX';
 // import OnPress from '../../src/components/OnPress';
 //import UseStateHook from '../../src/components/UseStateHook';
@@ -89,8 +89,29 @@ const Stack = createNativeStackNavigator();
 const HomeScreen2 = () => {
   return (
     // <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Login' component={Login} />
+      <Stack.Navigator
+        screenOptions={
+          {
+            headerStyle: styles.header,
+            headerTitleStyle: styles.headerTitle,
+            headerTintColor: "#fff",
+            contentStyle: styles.screen
+          }
+        }
+      >
+        <Stack.Screen name='Login' component={Login} 
+        // options={{
+        //   title: 'Login Form',
+        //   headerTintColor: 'red',
+        //   headerTitleStyle: {
+        //     fontSize: 30,
+        //     //color: 'yellow',
+        //   },
+        //   headerStyle: {
+        //     backgroundColor: 'lightblue'
+        //   },
+        // }}
+         />
         <Stack.Screen name='Home' component={Home} options={{ headerShown: false }} />
         <Stack.Screen name='About' component={About} />
       </Stack.Navigator>
@@ -108,3 +129,18 @@ const HomeScreen2 = () => {
 
 // export default HomeScreen
 export default HomeScreen2
+
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: "blue"
+  },
+  headerTitle: {
+    fontSize: 26,
+    fontWeight: 'bold'
+  },
+  screen: {
+    backgroundColor: 'lightgreen'
+  }
+})
+
+
