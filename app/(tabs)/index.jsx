@@ -34,7 +34,10 @@ import { View } from 'react-native';
 // import DELETE_API from '../../src/components/DELETE_API'
 // import GET_API_LIST from '../../src/components/GET_API_LIST'
 // import PlatformExample from '../../src/components/PlatformExample'
-import Search from '../../src/components/Search'
+// import Search from '../../src/components/Search'
+import Home from '../../src/NavigationScreens/Home'
+import About from '../../src/NavigationScreens/About'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const HomeScreen = () => {
   return (
@@ -81,6 +84,18 @@ const HomeScreen = () => {
   )
 }
 
+const Stack = createNativeStackNavigator();
+const HomeScreen2 = () => {
+  return (
+    // <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Home' component={Home} options={{ headerShown: false }} />
+        <Stack.Screen name='About' component={About} />
+      </Stack.Navigator>
+    // </NavigationContainer>
+  )
+}
+
 // const First = () => {
 //   return(
 //     <View>
@@ -89,4 +104,5 @@ const HomeScreen = () => {
 //   )
 // }
 
-export default HomeScreen
+// export default HomeScreen
+export default HomeScreen2
