@@ -13,6 +13,7 @@ const Login = ({navigation}) => {
       />
       {/* <Button title='Login' onPress={() => navigation.navigate('About', {username: 'Adwait', age: 26})}/> */}
       <Button title='Login' onPress={() => navigation.navigate('About', {username: userName, age: 26})}/>
+      <Button title='Show Drawer' onPress={() => navigation.navigate('Drawer')}/>
     </SafeAreaView>
   )
 }

@@ -2,7 +2,7 @@
 import React from 'react'
 // import { View, Text, Button } from 'react-native'
 // import First from '../../src/components/First';
-import { Alert, Button, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Text , Alert, Button, StyleSheet, TouchableOpacity, View } from 'react-native';
 // import JSX from '../../src/components/JSX';
 // import OnPress from '../../src/components/OnPress';
 //import UseStateHook from '../../src/components/UseStateHook';
@@ -41,6 +41,8 @@ import Login from '../../src/NavigationScreens/Login'
 import MyHeader from '../../src/NavigationScreens/MyHeader'
 import Example from '../../src/NavigationScreens/Example'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import 'react-native-gesture-handler'
 
 const HomeScreen = () => {
   return (
@@ -146,6 +148,7 @@ const HomeScreen2 = () => {
             // headerRight: HeaderRight
           }}
         />
+        <Stack.Screen name='Drawer' component={HomeScreen3} />
         <Stack.Screen name='Login' component={Login} 
         // Options for screen specific styling
         // options={{
@@ -178,8 +181,70 @@ const HomeScreen2 = () => {
 //   )
 // }
 
+
+
+const HomeDrawer = ({ navigation }) => {
+  return (
+    <View style={styles1.screenContainer}>
+      <Text style={styles1.title}>Home Screen</Text>
+      <Button title='Open Drawer' onPress={() => navigation.openDrawer()} />
+    </View>
+  )
+}
+
+const Profile = ({ navigation }) => {
+  return (
+    <View style={styles1.screenContainer}>
+      <Text style={styles1.title}>Profile Screen</Text>
+      <Button title='Open Drawer' onPress={() => navigation.openDrawer()} />
+    </View>
+  )
+}
+
+const Setting = ({ navigation }) => {
+  return (
+    <View style={styles1.screenContainer}>
+      <Text style={styles1.title}>Setting Screen</Text>
+      <Button title='Open Drawer' onPress={() => navigation.openDrawer()} />
+    </View>
+  )
+}
+
+
+const Drawer = createDrawerNavigator();
+
+const HomeScreen3 = () => {
+  return (
+    // <NavigationContainer>
+      <Drawer.Navigator
+      screenOptions={{
+        header: ({ navigation }) => <Example navigation={navigation} />,
+        drawerStyle: {
+          backgroundColor: '#e6e6e6',
+          width: 240
+        },
+        // drawerLabelStyle: {
+        //   fontSize: 18,
+        //   color: '#333'
+        // },
+        // headerStyle: {
+        //   backgroundColor: '#6200EE'
+        // },
+        // headerTintColor: '#fff',
+        // headerTitleAlign: 'center'
+      }}
+      >
+        <Drawer.Screen name="Home" component={HomeDrawer} />
+        <Drawer.Screen name="Profile" component={Profile} />
+        <Drawer.Screen name="Settings" component={Setting} />
+      </Drawer.Navigator>
+    //</NavigationContainer>{/* </NavigationContainer> */}
+  )
+}
+
 // export default HomeScreen
-export default HomeScreen2
+// export default HomeScreen2
+export default HomeScreen3
 
 const styles = StyleSheet.create({
   header: {
@@ -193,5 +258,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgreen'
   }
 })
+
+const styles1 = StyleSheet.create({
+  screenContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f0f0f0'
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 20
+  }
+});
 
 
