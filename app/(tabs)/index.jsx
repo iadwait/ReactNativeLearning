@@ -114,14 +114,20 @@ const HomeScreen2 = () => {
     // <NavigationContainer>
       <Stack.Navigator
       // screenOptions for common styling on all screens
-        screenOptions={
-          {
-            headerStyle: styles.header,
-            headerTitleStyle: styles.headerTitle,
-            headerTintColor: "#fff",
-            contentStyle: styles.screen
-          }
-        }
+        // screenOptions={
+        //   {
+  
+        //   }
+        // }
+        screenOptions={({ route, navigation }) => ({
+          header: ({ navigation }) => <Example navigation={navigation} hideBackButton={route.name === "MyHeader"} />,
+          // header: () => <Example />,
+          headerStyle: styles.header,
+          // headerTitle: MyExampleHeaderLeft,
+          //headerTitleStyle: styles.headerTitle,
+          // headerTintColor: "#fff",
+          contentStyle: styles.screen
+        })}
       >
         <Stack.Screen name='MyHeader' component={MyHeader} 
           options={{
@@ -154,7 +160,9 @@ const HomeScreen2 = () => {
         //     backgroundColor: 'lightblue'
         //   },
         // }}
-         />
+         options={{
+          headerLeft: () => null
+         }}/>
         <Stack.Screen name='Home' component={Home} options={{ headerShown: false }} />
         <Stack.Screen name='About' component={About} />
       </Stack.Navigator>
