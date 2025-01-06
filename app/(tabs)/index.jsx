@@ -2,7 +2,7 @@
 import React from 'react'
 // import { View, Text, Button } from 'react-native'
 // import First from '../../src/components/First';
-import { StyleSheet, View } from 'react-native';
+import { Alert, Button, StyleSheet, TouchableOpacity, View } from 'react-native';
 // import JSX from '../../src/components/JSX';
 // import OnPress from '../../src/components/OnPress';
 //import UseStateHook from '../../src/components/UseStateHook';
@@ -38,6 +38,8 @@ import { StyleSheet, View } from 'react-native';
 import Home from '../../src/NavigationScreens/Home'
 import About from '../../src/NavigationScreens/About'
 import Login from '../../src/NavigationScreens/Login'
+import MyHeader from '../../src/NavigationScreens/MyHeader'
+import Example from '../../src/NavigationScreens/Example'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const HomeScreen = () => {
@@ -86,10 +88,32 @@ const HomeScreen = () => {
 }
 
 const Stack = createNativeStackNavigator();
+
+const MyExampleHeaderLeft = () => <Example />
+
+const sayHello = () => {
+  Alert.alert('Hello', 'Hello Message')
+}
+
+// We added HeaderTitle and HeaderRight ref here to so that app does not call it again everytime
+const HeaderTitle = () => (
+  <TouchableOpacity style={{width: 50}}>
+      <Button title='One' color="red" onPress={sayHello}/>
+  </TouchableOpacity>
+)
+
+const HeaderRight = () => (
+  <TouchableOpacity style={{width: 50}}>
+      <Button title='Two' color="green" onPress={sayHello}/>
+  </TouchableOpacity>
+)
+
+
 const HomeScreen2 = () => {
   return (
     // <NavigationContainer>
       <Stack.Navigator
+      // screenOptions for common styling on all screens
         screenOptions={
           {
             headerStyle: styles.header,
@@ -99,12 +123,31 @@ const HomeScreen2 = () => {
           }
         }
       >
+        <Stack.Screen name='MyHeader' component={MyHeader} 
+          options={{
+            title: '',
+            // headerTitle: () => (
+            //   <TouchableOpacity style={{width: 50}}>
+            //       <Button title='One' color="red"/>
+            //   </TouchableOpacity>
+            // ),
+            // headerRight: () => (
+            //   <TouchableOpacity style={{width: 50}}>
+            //       <Button title='Two' color="green"/>
+            //   </TouchableOpacity>
+            // ),
+            headerTitle: MyExampleHeaderLeft,//HeaderTitle,
+            // headerRight: HeaderRight
+          }}
+        />
         <Stack.Screen name='Login' component={Login} 
+        // Options for screen specific styling
         // options={{
         //   title: 'Login Form',
         //   headerTintColor: 'red',
         //   headerTitleStyle: {
         //     fontSize: 30,
+        //     fontWeight: 'bold'
         //     //color: 'yellow',
         //   },
         //   headerStyle: {
@@ -132,7 +175,7 @@ export default HomeScreen2
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: "blue"
+    backgroundColor: "lightblue"
   },
   headerTitle: {
     fontSize: 26,
