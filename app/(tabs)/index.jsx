@@ -43,6 +43,8 @@ import Example from '../../src/NavigationScreens/Example'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import 'react-native-gesture-handler'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const HomeScreen = () => {
   return (
@@ -242,9 +244,83 @@ const HomeScreen3 = () => {
   )
 }
 
+const HomeBottomBarScreen = ({ navigation }) => {
+  return (
+    <View style={styles2.container}>
+      <Text style={styles2.text}>Home Screen</Text>
+    </View>
+  )
+}
+
+const ProfileBottomBarScreen = ({ navigation }) => {
+  return (
+    <View style={styles2.container}>
+      <Text style={styles2.text}>Profile Screen</Text>
+    </View>
+  )
+}
+
+const SettingBottomBarScreen = ({ navigation }) => {
+  return (
+    <View style={styles2.container}>
+      <Text style={styles2.text}>Setting Screen</Text>
+    </View>
+  )
+}
+
+const Tab = createBottomTabNavigator();
+
+const getTabBarIcon = (routeName, focused, color, size) => {
+  let iconName;
+  console.log(`Route Name = ${routeName}`)
+  if (routeName === "Home") {
+    iconName = focused ? 'home' : 'home-outline'
+  }
+  else if (routeName === "Profile") {
+    iconName = focused ? 'person' : 'person-outline'
+  }
+  else if (routeName === "Settings") {
+    iconName = focused ? 'settings' : 'settings-outline'
+  }
+  return <Icon name={iconName} size= {size} color={color} />
+}
+
+function getMyHeader({navigation}) {
+  return <Example navigation={navigation} />
+}
+
+const HomeScreen4 = () => {
+  return (
+    // <NavigationContainer>
+      <Tab.Navigator
+      /*
+        ({ route }) -> Object Destructuring, Direct access route inside object
+        ( Object ) -> Here you receive object, Now access param Object.route.paramName
+      */
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => getTabBarIcon(route.name, focused, color, size),
+        tabBarActiveTintColor: '#007bff',
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle: {
+          paddingBottom: 5,
+          height: 60
+        },
+        // headerShown: false, // Hide default top bar for all screens,
+        header: ({ navigation }) => getMyHeader(navigation)
+      })}
+      >
+        <Tab.Screen name="Home" component={HomeBottomBarScreen} />
+        <Tab.Screen name="Profile" component={ProfileBottomBarScreen} />
+        <Tab.Screen name="Settings" component={SettingBottomBarScreen} />
+      </Tab.Navigator>
+    // </NavigationContainer>
+  )
+}
+
 // export default HomeScreen
 // export default HomeScreen2
-export default HomeScreen3
+// export default HomeScreen3
+export default HomeScreen4
 
 const styles = StyleSheet.create({
   header: {
@@ -273,4 +349,18 @@ const styles1 = StyleSheet.create({
   }
 });
 
+
+const styles2 = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f8f9fa'
+  },
+  text: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#343a40'
+  }
+});
 
