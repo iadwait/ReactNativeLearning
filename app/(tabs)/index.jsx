@@ -45,6 +45,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import 'react-native-gesture-handler'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons'
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const HomeScreen = () => {
   return (
@@ -291,7 +292,7 @@ function getMyHeader({navigation}) {
 
 const HomeScreen4 = () => {
   return (
-    // <NavigationContainer>
+    <SafeAreaView style={{ flex: 1 }}>
       <Tab.Navigator
       /*
         ({ route }) -> Object Destructuring, Direct access route inside object
@@ -306,14 +307,20 @@ const HomeScreen4 = () => {
           height: 60
         },
         // headerShown: false, // Hide default top bar for all screens,
-        header: ({ navigation }) => getMyHeader(navigation)
+        header: ({ navigation }) => getMyHeader(navigation),
+        tabBarStyle: {
+          position: 'absolute',  // Makes sure it stays at the bottom
+          bottom: 0,             // Positions it at the bottom of the screen
+          zIndex: 9999,          // Ensures it stays above other components
+          // backgroundColor: 'blue',
+        }
       })}
       >
         <Tab.Screen name="Home" component={HomeBottomBarScreen} />
         <Tab.Screen name="Profile" component={ProfileBottomBarScreen} />
         <Tab.Screen name="Settings" component={SettingBottomBarScreen} />
       </Tab.Navigator>
-    // </NavigationContainer>
+    </SafeAreaView>
   )
 }
 
