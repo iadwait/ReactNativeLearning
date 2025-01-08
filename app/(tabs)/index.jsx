@@ -310,7 +310,7 @@ const HomeScreen4 = () => {
         header: ({ navigation }) => getMyHeader(navigation),
         tabBarStyle: {
           position: 'absolute',  // Makes sure it stays at the bottom
-          bottom: 0,             // Positions it at the bottom of the screen
+          bottom: 15,             // Positions it at the bottom of the screen
           zIndex: 9999,          // Ensures it stays above other components
           // backgroundColor: 'blue',
         }
