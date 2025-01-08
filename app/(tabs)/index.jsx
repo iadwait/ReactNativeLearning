@@ -46,6 +46,7 @@ import 'react-native-gesture-handler'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 const HomeScreen = () => {
   return (
@@ -320,10 +321,62 @@ const HomeScreen4 = () => {
   )
 }
 
+// Top Nav Bar
+
+const chatScreen = () => {
+  return(
+    <View style={topNavStyles.container}>
+      <Text style={topNavStyles.text}>Chat</Text>
+    </View>
+  )
+}
+
+const StatusScreen = () => {
+  return(
+    <View style={topNavStyles.container}>
+      <Text style={topNavStyles.text}>Status</Text>
+    </View>
+  )
+}
+
+const CallScreen = () => {
+  return(
+    <View style={topNavStyles.container}>
+      <Text style={topNavStyles.text}>Calls</Text>
+    </View>
+  )
+}
+
+const TopTab = createMaterialTopTabNavigator();
+const HomeScreen5 = () => {
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <TopTab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: '#007bff',
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle: { backgroundColor: '#fff' },
+        tabBarIndicatorStyle: {
+          backgroundColor: '#007bff',
+          height: 3
+        }
+      }}
+      >
+        <TopTab.Screen name='Chat' component={chatScreen} />
+        <TopTab.Screen name='Status' component={StatusScreen} />
+        <TopTab.Screen name='Call' component={CallScreen} />
+      </TopTab.Navigator>
+    </SafeAreaView>
+  )
+}
+
 // export default HomeScreen
 // export default HomeScreen2
 // export default HomeScreen3
-export default HomeScreen4
+// export default HomeScreen4
+export default HomeScreen5
+
+
 
 const styles = StyleSheet.create({
   header: {
@@ -367,3 +420,14 @@ const styles2 = StyleSheet.create({
   }
 });
 
+const topNavStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  }
+})
