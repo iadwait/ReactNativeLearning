@@ -2,7 +2,7 @@
 import React from 'react'
 // import { View, Text, Button } from 'react-native'
 // import First from '../../src/components/First';
-import { Text , Alert, Button, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Text , Alert, Button, StyleSheet, TouchableOpacity, View, Platform } from 'react-native';
 // import JSX from '../../src/components/JSX';
 // import OnPress from '../../src/components/OnPress';
 //import UseStateHook from '../../src/components/UseStateHook';
@@ -302,15 +302,11 @@ const HomeScreen4 = () => {
         tabBarIcon: ({ focused, color, size }) => getTabBarIcon(route.name, focused, color, size),
         tabBarActiveTintColor: '#007bff',
         tabBarInactiveTintColor: 'gray',
-        tabBarStyle: {
-          paddingBottom: 5,
-          height: 60
-        },
         // headerShown: false, // Hide default top bar for all screens,
         header: ({ navigation }) => getMyHeader(navigation),
         tabBarStyle: {
           position: 'absolute',  // Makes sure it stays at the bottom
-          bottom: 15,             // Positions it at the bottom of the screen
+          bottom: Platform.OS === 'ios' ? 15 : 0,             // Positions it at the bottom of the screen
           zIndex: 9999,          // Ensures it stays above other components
           // backgroundColor: 'blue',
         }
