@@ -48,6 +48,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import AsyncStorageExample from  '../../src/components/AsyncStorageExample'
+import ImageComponentExample from '../../src/components/ImageComponentExample'
 
 const HomeScreen = () => {
   return (
@@ -378,12 +379,23 @@ const AsyncExampleScreen = () => {
     </SafeAreaView>
   )
 }
+
+
+const ImageComponentExampleScreen = () => {
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <ImageComponentExample />
+    </SafeAreaView>
+  )
+}
+
 // export default HomeScreen
 // export default HomeScreen2
 // export default HomeScreen3
 // export default HomeScreen4
 // export default HomeScreen5
-export default AsyncExampleScreen
+//export default AsyncExampleScreen
+export default ImageComponentExampleScreen
 
 
 
