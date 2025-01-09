@@ -49,6 +49,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import AsyncStorageExample from  '../../src/components/AsyncStorageExample'
 import ImageComponentExample from '../../src/components/ImageComponentExample'
+import Parent from '../../src/components/Parent'
 
 const HomeScreen = () => {
   return (
@@ -389,13 +390,24 @@ const ImageComponentExampleScreen = () => {
   )
 }
 
+const PropDrilling = () => {
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
+        <Parent />
+      </View>
+    </SafeAreaView>
+  )
+}
+
 // export default HomeScreen
 // export default HomeScreen2
 // export default HomeScreen3
 // export default HomeScreen4
 // export default HomeScreen5
 //export default AsyncExampleScreen
-export default ImageComponentExampleScreen
+//export default ImageComponentExampleScreen
+export default PropDrilling
 
 
 
