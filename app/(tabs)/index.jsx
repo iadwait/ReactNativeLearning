@@ -53,6 +53,7 @@ import Parent from '../../src/components/Parent'
 import { Provider } from 'react-redux';
 import store from '../../src/redux/store/store'
 import Counter from '../../src/components/Counter'
+import One from '../../src/zustand/One'
 
 const HomeScreen = () => {
   return (
@@ -411,6 +412,14 @@ const ReduxExample = () => {
   )
 }
 
+const ZustandExample = () => {
+  return (
+    <View>
+      <One />
+    </View>
+  )
+}
+
 // export default HomeScreen
 // export default HomeScreen2
 // export default HomeScreen3
@@ -419,7 +428,8 @@ const ReduxExample = () => {
 //export default AsyncExampleScreen
 //export default ImageComponentExampleScreen
 //export default PropDrilling
-export default ReduxExample
+//export default ReduxExample
+export default ZustandExample
 
 
 
