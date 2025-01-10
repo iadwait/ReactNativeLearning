@@ -50,6 +50,9 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import AsyncStorageExample from  '../../src/components/AsyncStorageExample'
 import ImageComponentExample from '../../src/components/ImageComponentExample'
 import Parent from '../../src/components/Parent'
+import { Provider } from 'react-redux';
+import store from '../../src/redux/store/store'
+import Counter from '../../src/components/Counter'
 
 const HomeScreen = () => {
   return (
@@ -400,6 +403,14 @@ const PropDrilling = () => {
   )
 }
 
+const ReduxExample = () => {
+  return (
+    <Provider store={store}>
+      <Counter />
+    </Provider>
+  )
+}
+
 // export default HomeScreen
 // export default HomeScreen2
 // export default HomeScreen3
@@ -407,7 +418,8 @@ const PropDrilling = () => {
 // export default HomeScreen5
 //export default AsyncExampleScreen
 //export default ImageComponentExampleScreen
-export default PropDrilling
+//export default PropDrilling
+export default ReduxExample
 
 
 
