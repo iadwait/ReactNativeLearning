@@ -54,6 +54,7 @@ import { Provider } from 'react-redux';
 import store from '../../src/redux/store/store'
 import Counter from '../../src/components/Counter'
 import One from '../../src/zustand/One'
+import CustomDropdownUsage from '../../src/components/CustomDropDownUsage'
 
 const HomeScreen = () => {
   return (
@@ -420,6 +421,14 @@ const ZustandExample = () => {
   )
 }
 
+const UITest = () => {
+  return (
+    <View style={{ flex: 1 }}>
+      <CustomDropdownUsage />
+    </View>
+  )
+}
+
 // export default HomeScreen
 // export default HomeScreen2
 // export default HomeScreen3
@@ -429,7 +438,8 @@ const ZustandExample = () => {
 //export default ImageComponentExampleScreen
 //export default PropDrilling
 //export default ReduxExample
-export default ZustandExample
+//export default ZustandExample
+export default UITest
 
 
 
