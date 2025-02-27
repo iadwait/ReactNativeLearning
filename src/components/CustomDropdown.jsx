@@ -1,6 +1,6 @@
 // CustomDropdown.js
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet, Modal, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, StyleSheet, Modal, Dimensions, Image } from 'react-native';
 
 const screenHeight = Dimensions.get('window').height;
 const safeAreaHeight = screenHeight * 0.8;
@@ -10,9 +10,9 @@ const CustomDropdown = ({ data, onSelect, placeholder }) => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleSelect = (item) => {
-    setSelectedItem(item);
+    //setSelectedItem(item);
     onSelect(item);  // Pass the selected item to parent
-    closeDropDown();
+    //closeDropDown();
   };
 
   const closeDropDown = () => {
@@ -39,11 +39,24 @@ const CustomDropdown = ({ data, onSelect, placeholder }) => {
         >
           <TouchableOpacity style={styles.overlay} onPress={() => setIsOpen(false)}>
             <View style={styles.dropdown}>
+              <View style={{ backgroundColor: 'lightgray' }}>
+                  <Text style={{ padding: 10, fontSize: 20, fontWeight: 'bold' }}>Select One</Text>
+              </View>
               <FlatList
                 data={data}
                 renderItem={({ item }) => (
                   <TouchableOpacity onPress={() => handleSelect(item)} style={styles.option}>
-                    <Text style={styles.optionText}>{item}</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <Text style={styles.optionText}>{item.name}</Text>
+                    {
+                      item.isSelected && (
+                        <Image 
+                        source={require('../Images/check.png')}
+                        style={{ width: 16, height: 16 }}
+                    />
+                      )
+                    }
+                      </View>
                   </TouchableOpacity>
                 )}
                 keyExtractor={(item, index) => index.toString()}

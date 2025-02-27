@@ -5,11 +5,27 @@ import { useState } from 'react'
 
 const CustomDropDownUsage = () => {
 
-const dropDownData = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5']
-const [selectedItem, setSelectedItem] = useState(null);
+const initialDropdownData = [
+  {name: 'Option1', isSelected: false}, 
+  {name: 'Option2', isSelected: false},
+  {name: 'Option3', isSelected: false}, 
+  {name: 'Option4', isSelected: false}, 
+  {name: 'Option5', isSelected: false},
+]
+
+const [dropdownData, setDropdownData] = useState(initialDropdownData);
 
 const handleItemSelect = (item) => {
-  console.log(`Selected Item = ${item}`)
+  const updatedDropdownData = dropdownData.map((option) => {
+    if (option.name === item.name) {
+      return {...option, isSelected: !option.isSelected}
+    }
+    return option
+  })
+  //item.isSelected = !item.isSelected
+  setDropdownData(updatedDropdownData);
+  //console.log(`Selected Item = ${item}`)
+  //console.log(`Selected Item = ${item.isSelected}`)
 }
 
   return (
@@ -19,7 +35,7 @@ const handleItemSelect = (item) => {
 
         {/* Custom Dropdown */}
         <CustomDropdown 
-          data={dropDownData}
+          data={dropdownData}
           onSelect={handleItemSelect}
           placeholder="Select an option"
         />
